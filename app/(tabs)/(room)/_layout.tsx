@@ -5,6 +5,7 @@ const RoomLayout = () => {
         <Stack>
             <Stack.Screen name="index" options={{headerShown:false}}/>
             <Stack.Screen name="[roomId]"options={{headerShown:false}}/>
+            <Stack.Screen name="datebooking"/>
         </Stack>
     )
 }

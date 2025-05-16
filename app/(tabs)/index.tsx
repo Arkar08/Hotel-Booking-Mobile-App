@@ -15,17 +15,16 @@ const Home = () =>{
 
     const router = useRouter()
 
-    const viewDetails = () =>{
+    const viewDetails = (id:string) =>{
         router.navigate({
             pathname:"/(tabs)/(room)/[roomId]",
-            params:{roomId:'1'}
+            params:{roomId:id}
         })
-        console.log('Hello Room')
     }
 
-    const renderItem = ({item}:any) =>{
+    const renderItem = ({item}:any) => {
         return (
-            <Pressable style={styles.card} onPress={viewDetails}>
+            <Pressable style={styles.card} onPress={()=>viewDetails('3')}>
                 <Image source={cardImage} style={styles.cardImage}/>
                 <View style={styles.textContainer}>
                     <View>

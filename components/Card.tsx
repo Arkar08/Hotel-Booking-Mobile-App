@@ -7,15 +7,15 @@ const Card = ({item}:any) =>{
 
     const router = useRouter();
 
-    const roomView = () => {
+    const roomView = (id:string) => {
         router.navigate({
             pathname:"/(tabs)/(room)/[roomId]",
-            params:{roomId:"12345"}
+            params:{roomId:id}
         })
     }
 
     return (
-        <Pressable style={styles.cardContainer} onPress={roomView}>
+        <Pressable style={styles.cardContainer} onPress={()=>roomView('2')}>
             <Text style={styles.status}>{item.status}</Text>
             <Image source={cardImage} style={styles.cardImage}/>
             <View style={styles.textContainer}>

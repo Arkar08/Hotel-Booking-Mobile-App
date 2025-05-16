@@ -41,14 +41,14 @@ const PersonalDetails = () => {
                     <Text style={styles.label}>Password</Text>
                     <Input placeholder="Enter Password"/>
                 </View>
-                <View style={styles.btnContainer}>
+            </View>
+            <View style={styles.btnContainer}>
                     <Pressable onPress={cancelBtn} style={styles.cancelBtn}>
                         <Text style={styles.cancelText}>Cancel</Text>
                     </Pressable>
                     <Pressable onPress={saveBtn} style={styles.saveBtn}>
                         <Text style={styles.saveText}>Save</Text>
                     </Pressable>
-                </View>
             </View>
         </SafeAreaView>
     )
@@ -57,6 +57,7 @@ const PersonalDetails = () => {
 const styles = StyleSheet.create({
     container:{
         flex:1,
+        position:'relative'
     },
     header:{
         height:60,
@@ -103,20 +104,22 @@ const styles = StyleSheet.create({
         flexDirection:'row',
         justifyContent:'center',
         alignItems:'center',
-        marginTop:20,
-        gap:10
+        gap:20,
+        position:"absolute",
+        bottom:20,
+        width:'100%'
     },
     cancelBtn:{
         backgroundColor:'red',
         padding:10,
         borderRadius:10,
-        width:100
+        width:150
     },
     saveBtn:{
         backgroundColor:"green",
         padding:10,
         borderRadius:10,
-        width:100
+        width:150
     },
     saveText:{
         color:"white",
