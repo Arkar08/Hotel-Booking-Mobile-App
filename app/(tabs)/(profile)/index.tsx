@@ -29,7 +29,7 @@ const Profile = () => {
       <View style={styles.footer}>
         <Pressable
           style={styles.footerCard}
-          onPress={() => router.push("/(navigate)/personaldetail")}
+          onPress={() => router.push('/personaldetail')}
         >
           <View style={styles.personal}>
             <FontAwesome name="user" size={22} />
@@ -39,7 +39,7 @@ const Profile = () => {
         </Pressable>
          <Pressable
           style={styles.footerCard}
-          onPress={() => router.push("/(tabs)/booking")}
+          onPress={() => router.push("/(booking)")}
         >
           <View style={styles.personal}>
             <FontAwesome name="user" size={22} />
@@ -49,7 +49,7 @@ const Profile = () => {
         </Pressable>
          <Pressable
           style={styles.footerCard}
-          onPress={() => router.push("/(navigate)/notification")}
+          onPress={() => router.push("/notification")}
         >
           <View style={styles.personal}>
             <FontAwesome name="user" size={22} />
@@ -57,7 +57,7 @@ const Profile = () => {
           </View>
           <AntDesign name="right" size={22} color="gray" />
         </Pressable>
-         <Pressable
+         {/* <Pressable
           style={styles.footerCard}
           onPress={() => router.push("/(navigate)/payment")}
         >
@@ -66,7 +66,7 @@ const Profile = () => {
             <Text style={styles.personalText}>Payment</Text>
           </View>
           <AntDesign name="right" size={22} color="gray" />
-        </Pressable>
+        </Pressable> */}
          <Pressable
           style={styles.footerCard}
           onPress={logout}

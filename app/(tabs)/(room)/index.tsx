@@ -13,7 +13,7 @@ const Room = () =>{
         <SafeAreaView style={styles.container}>
             <View style={styles.header}>
                 <Text style={styles.nameText}>Hotel Booking</Text>
-                 <Pressable onPress={()=>router.push("/(navigate)/notification")}>
+                 <Pressable onPress={()=>router.push("/(profile)/notification")}>
                         <Ionicons name="notifications-outline" size={24} color="black" />
                 </Pressable>
             </View>

@@ -1,10 +1,21 @@
-import { Image, StyleSheet, Text, View } from "react-native";
+import { useRouter } from "expo-router";
+import { Image, Pressable, StyleSheet, Text, View } from "react-native";
 
 const cardImage = require("@/assets/images/loginImage4.png");
 
 const Card = ({item}:any) =>{
+
+    const router = useRouter();
+
+    const roomView = () => {
+        router.navigate({
+            pathname:"/(tabs)/(room)/[roomId]",
+            params:{roomId:"12345"}
+        })
+    }
+
     return (
-        <View style={styles.cardContainer}>
+        <Pressable style={styles.cardContainer} onPress={roomView}>
             <Text style={styles.status}>{item.status}</Text>
             <Image source={cardImage} style={styles.cardImage}/>
             <View style={styles.textContainer}>
@@ -12,7 +23,7 @@ const Card = ({item}:any) =>{
                 <Text style={styles.locationName}>{item.type}</Text>
                 <Text style={styles.price}>{item.price}/night</Text>
             </View>
-        </View>
+        </Pressable>
     )
 }
 

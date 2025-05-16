@@ -2,7 +2,7 @@ import { data } from '@/utils/dummy';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
-import { router } from 'expo-router';
+import { useRouter } from 'expo-router';
 import { Image, Pressable, StyleSheet, Text, TextInput, View } from "react-native";
 import { FlatList } from 'react-native-gesture-handler';
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -13,9 +13,19 @@ const cardImage = require("@/assets/images/loginImage4.png");
 
 const Home = () =>{
 
+    const router = useRouter()
+
+    const viewDetails = () =>{
+        router.navigate({
+            pathname:"/(tabs)/(room)/[roomId]",
+            params:{roomId:'1'}
+        })
+        console.log('Hello Room')
+    }
+
     const renderItem = ({item}:any) =>{
         return (
-            <View style={styles.card}>
+            <Pressable style={styles.card} onPress={viewDetails}>
                 <Image source={cardImage} style={styles.cardImage}/>
                 <View style={styles.textContainer}>
                     <View>
@@ -31,7 +41,7 @@ const Home = () =>{
                         <Text style={styles.buttonText}>{item.status}</Text>
                     </View>
                 </View>
-            </View>
+            </Pressable>
         )
     }
 
@@ -39,7 +49,7 @@ const Home = () =>{
             <SafeAreaView  style={styles.container}>
                 <View style={styles.header}>
                     <Text style={styles.nameText}>Hotel Booking</Text>
-                    <Pressable onPress={()=>router.push("/(navigate)/notification")}>
+                    <Pressable onPress={()=>router.push("/(profile)/notification")}>
                         <Ionicons name="notifications-outline" size={24} color="black" />
                     </Pressable>
                 </View>

@@ -10,17 +10,20 @@ const PersonalDetails = () => {
     const router = useRouter()
 
     const cancelBtn = () =>{
-        router.push('/(tabs)/profile')
+        router.push('/(profile)')
     }
 
     
     const saveBtn = () =>{
-        router.push('/(tabs)/profile')
+        router.push('/(profile)')
     }
 
     return (
         <SafeAreaView style={styles.container}>
-            <View>
+            <View style={styles.header}>
+                <Text style={styles.nameText}>Personal Detail</Text>
+            </View>
+            <View style={styles.profileContainer}>
                 <View style={styles.imageContainer}>
                     <View style={styles.imageList}>
                          <Image source={cardImage} style={styles.image}/>
@@ -54,14 +57,32 @@ const PersonalDetails = () => {
 const styles = StyleSheet.create({
     container:{
         flex:1,
-        padding:10
+    },
+    header:{
+        height:60,
+        borderBottomWidth:1,
+        width:"100%",
+        padding:10,
+        backgroundColor:'blue',
+        borderBottomRightRadius:50,
+        borderBottomLeftRadius:50
+    },
+    nameText:{
+        fontSize:18,
+        fontWeight:'bold',
+        color:'white',
+        textAlign:'center',
+        marginTop:5
+    },
+    profileContainer:{
+        padding:10,
+        marginTop:10,
     },
     label:{
         marginBottom:10,
         paddingHorizontal:10
     },
     imageContainer:{
-       
         justifyContent:'center',
         alignItems:'center'
     },

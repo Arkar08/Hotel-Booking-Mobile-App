@@ -1,9 +1,20 @@
+import { useRouter } from "expo-router";
 import { Image, Pressable, StyleSheet, Text, View } from "react-native";
 
 
 const cardImage = require("@/assets/images/icon.png");
 
 const BookingCard = () =>{
+
+    const router = useRouter();
+
+    const bookingHistory = () => {
+        router.navigate({
+            pathname:"/(tabs)/(booking)/[bookingId]",
+            params:{bookingId:"123Booking"}
+        })
+    }
+
     return (
         <View style={styles.cardContainer}>
             <View style={styles.headerContainer}>
@@ -23,7 +34,7 @@ const BookingCard = () =>{
             </View>
             <View style={styles.bottomContainer}>
                 <Text style={styles.priceText}>Total Price - <Text style={styles.price}>3000Ks</Text></Text>
-                <Pressable style={styles.button}>
+                <Pressable style={styles.button} onPress={bookingHistory}>
                     <Text style={styles.buttonText}>View Details</Text>
                 </Pressable>
             </View>
@@ -36,7 +47,7 @@ export default BookingCard;
 const styles = StyleSheet.create({
     cardContainer:{
         width:'95%',
-        height:200,
+        height:230,
         borderWidth:1,
         margin:'auto',
         borderRadius:10,
@@ -66,7 +77,7 @@ const styles = StyleSheet.create({
     },
     cardImage:{
         width:120,
-        height:100,
+        height:120,
         borderRadius:20,
         padding:5
     },
@@ -102,7 +113,7 @@ const styles = StyleSheet.create({
     },
     button:{
         paddingHorizontal:15,
-        paddingVertical:5,
+        paddingVertical:10,
         backgroundColor:'blue',
         borderRadius:20
     },
