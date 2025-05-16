@@ -1,10 +1,21 @@
+import { useRouter } from "expo-router";
 import { Image, Pressable, StyleSheet, Text, View } from "react-native";
 
 const cardImage = require("@/assets/images/loginImage4.png");
 
 const AvaliableCard = ({item}:any) => {
+
+    const router = useRouter();
+
+    const viewRoom = (id:string) => {
+        router.navigate({
+            pathname:"/(tabs)/(room)/[roomId]",
+            params:{roomId:id}
+        })
+    }
+
     return (
-        <Pressable style={styles.card} >
+        <Pressable style={styles.card} onPress={()=>viewRoom('2')}>
             <Image source={cardImage} style={styles.cardImage}/>
             <View style={styles.textContainer}>
                 <View>
@@ -26,16 +37,17 @@ const AvaliableCard = ({item}:any) => {
 
 const styles = StyleSheet.create({
     card:{
-        width:300,
-        height:245,
+        width:350,
+        height:300,
         borderWidth:0.5,
         borderRadius:20,
-        marginRight:20,
-        position:'relative'
+        position:'relative',
+        marginTop:10,
+        marginHorizontal:'auto'
     },
     cardImage:{
         width:'100%',
-        height:'50%',
+        height:'60%',
         borderTopLeftRadius:20,
         borderTopRightRadius:20
     },

@@ -1,12 +1,11 @@
 import Ionicons from "@expo/vector-icons/Ionicons";
-import { useLocalSearchParams, useRouter } from "expo-router";
+import { useRouter } from "expo-router";
 import { Image, Pressable, StyleSheet, Text, View } from "react-native";
 
 const roomImage = require("@/assets/images/loginImage4.png");
 
 const RoomDetails = () => {
-  const { roomId } = useLocalSearchParams();
-  // console.log(roomId)
+
 
   const router = useRouter();
 

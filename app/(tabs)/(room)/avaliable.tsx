@@ -7,9 +7,8 @@ import { SafeAreaView } from "react-native-safe-area-context";
 const Avaliable = () => {
   return (
     <SafeAreaView style={styles.container}>
-      <View>
+      <View style={styles.cardContainer}>
         <FlatList
-          style={styles.cardContainer}
           data={data}
           keyExtractor={(data) => data.id}
           renderItem={AvaliableCard}
@@ -25,6 +24,7 @@ const styles = StyleSheet.create({
   },
   cardContainer: {
     marginTop: 10,
+    marginHorizontal:'auto',
   },
 });
 
