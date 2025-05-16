@@ -4,24 +4,21 @@ import { GestureHandlerRootView } from "react-native-gesture-handler";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 
 export default function RootLayout() {
-
-
   const isLoggedIn = true;
 
-
-  return  (
+  return (
     <GestureHandlerRootView>
       <SafeAreaProvider>
         <Stack>
           <Stack.Protected guard={isLoggedIn}>
-            <Stack.Screen name="(tabs)" options={{ headerShown: false }}/>
+            <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
           </Stack.Protected>
           <Stack.Protected guard={!isLoggedIn}>
-            <Stack.Screen name="(auth)"  options={{ headerShown: false }}/>
+            <Stack.Screen name="(auth)" options={{ headerShown: false }} />
           </Stack.Protected>
         </Stack>
-      <StatusBar style="auto"/>
+        <StatusBar style="auto" />
       </SafeAreaProvider>
     </GestureHandlerRootView>
-  )
+  );
 }

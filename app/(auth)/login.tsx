@@ -7,8 +7,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 const loginImage = require("@/assets/images/hotel-image.png");
 
 const Login = () => {
-
-  const loginBtn =  async() => {
+  const loginBtn = async () => {
     alert("Login Successfully.");
   };
 

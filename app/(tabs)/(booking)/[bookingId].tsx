@@ -3,16 +3,15 @@ import { Text } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 const ViewBooking = () => {
+  const { bookingId } = useLocalSearchParams();
 
-    const {bookingId} = useLocalSearchParams();
+  console.log(bookingId);
 
-    console.log(bookingId)
-
-    return (
-        <SafeAreaView>
-            <Text>View Booking</Text>
-        </SafeAreaView>
-    )
-}
+  return (
+    <SafeAreaView>
+      <Text>View Booking</Text>
+    </SafeAreaView>
+  );
+};
 
 export default ViewBooking;

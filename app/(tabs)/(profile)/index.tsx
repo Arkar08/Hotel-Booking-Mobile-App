@@ -7,11 +7,10 @@ import { SafeAreaView } from "react-native-safe-area-context";
 const profileImage = require("@/assets/images/icon.png");
 
 const Profile = () => {
-
-  const logout = () =>{
-    alert("Logout Successfully.")
-    router.push("/(auth)/login")
-  }
+  const logout = () => {
+    alert("Logout Successfully.");
+    router.push("/(auth)/login");
+  };
 
   return (
     <SafeAreaView style={styles.mainContainer}>
@@ -29,7 +28,7 @@ const Profile = () => {
       <View style={styles.footer}>
         <Pressable
           style={styles.footerCard}
-          onPress={() => router.push('/personaldetail')}
+          onPress={() => router.push("/personaldetail")}
         >
           <View style={styles.personal}>
             <FontAwesome name="user" size={22} />
@@ -37,7 +36,7 @@ const Profile = () => {
           </View>
           <AntDesign name="right" size={22} color="gray" />
         </Pressable>
-         <Pressable
+        <Pressable
           style={styles.footerCard}
           onPress={() => router.push("/(booking)")}
         >
@@ -47,7 +46,7 @@ const Profile = () => {
           </View>
           <AntDesign name="right" size={22} color="gray" />
         </Pressable>
-         <Pressable
+        <Pressable
           style={styles.footerCard}
           onPress={() => router.push("/notification")}
         >
@@ -57,7 +56,7 @@ const Profile = () => {
           </View>
           <AntDesign name="right" size={22} color="gray" />
         </Pressable>
-         {/* <Pressable
+        {/* <Pressable
           style={styles.footerCard}
           onPress={() => router.push("/(navigate)/payment")}
         >
@@ -67,10 +66,7 @@ const Profile = () => {
           </View>
           <AntDesign name="right" size={22} color="gray" />
         </Pressable> */}
-         <Pressable
-          style={styles.footerCard}
-          onPress={logout}
-        >
+        <Pressable style={styles.footerCard} onPress={logout}>
           <View style={styles.personal}>
             <FontAwesome name="user" size={22} />
             <Text style={styles.personalText}>Logout</Text>
@@ -83,8 +79,8 @@ const Profile = () => {
 };
 
 const styles = StyleSheet.create({
-  mainContainer:{
-    flex:1
+  mainContainer: {
+    flex: 1,
   },
   header: {
     height: 250,

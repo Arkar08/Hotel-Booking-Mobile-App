@@ -1,12 +1,12 @@
 import { Stack } from "expo-router";
 
 const BookingLayout = () => {
-    return (
-        <Stack>
-            <Stack.Screen name="index" options={{headerShown:false}}/>
-            <Stack.Screen name="[bookingId]" options={{headerShown:false}}/>
-        </Stack>
-    )
-}
+  return (
+    <Stack>
+      <Stack.Screen name="index" options={{ headerShown: false }} />
+      <Stack.Screen name="[bookingId]" options={{ headerShown: false }} />
+    </Stack>
+  );
+};
 
 export default BookingLayout;
