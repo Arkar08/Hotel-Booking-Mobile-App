@@ -1,7 +1,7 @@
 import DateTimePicker from '@react-native-community/datetimepicker';
+import moment from 'moment';
 import { useState } from "react";
 import { Pressable, StyleSheet, Text, View } from "react-native";
-import { TextInput } from 'react-native-gesture-handler';
 
 const DateBooking = () => {
 
@@ -10,6 +10,7 @@ const DateBooking = () => {
   const [checkIn,setCheckIn] = useState('')
   const [checkOutDate,setCheckOutDate] = useState(new Date())
   const [showCheckOut,setShowCheckOut] = useState(false)
+  const [checkOut,setCheckOut] = useState('')
 
   const toggleDatePicker = () => {
     setShowPicker(!showPicker)
@@ -18,7 +19,6 @@ const DateBooking = () => {
   const onChange = ({type}:any,selectedDate:any) => {
     if(type === 'set'){
       const currentDate = selectedDate;
-      console.log(currentDate)
       setDate(currentDate)
       setShowPicker(false)
       setCheckIn(currentDate)
@@ -35,6 +35,8 @@ const DateBooking = () => {
     if(type === 'set'){
       const currentDate = selectDate;
       setCheckOutDate(currentDate)
+      setCheckOut(currentDate)
+      setShowCheckOut(false)
     }else{
       toggelCheckOut()
     }
@@ -42,13 +44,12 @@ const DateBooking = () => {
 
   return (
     <View style={styles.container}>
-      <Text>DateBooking</Text>
-      <View>
+      <View style={styles.inputContainer}>
           <Text>Check In</Text>
           {
             !showPicker && (
-              <Pressable onPress={toggleDatePicker}>
-                <Text>{checkIn === '' && 'toggle' }</Text>
+              <Pressable onPress={toggleDatePicker} style={styles.checkIn}>
+                <Text  style={styles.checkText}>{checkIn === '' ? 'CheckIn Date' : moment(checkIn).format("MMM Do YY")   }</Text>
               </Pressable>
             )
           }
@@ -58,18 +59,18 @@ const DateBooking = () => {
             )
           }
       </View>
-       <View>
+       <View style={styles.inputContainer}>
           <Text>Check Out</Text>
           {
             !showCheckOut && (
-              <Pressable onPress={toggelCheckOut}>
-                <TextInput editable={false} placeholder='DateAndTime' style={{paddingVertical:5}}/>
+              <Pressable onPress={toggelCheckOut}  style={styles.checkIn}>
+                <Text style={styles.checkText}>{checkOut === '' ? 'CheckOut Date' : moment(checkOut).format("MMM Do YY")   }</Text>
               </Pressable>
             )
           }
           {
             showCheckOut && (
-              <DateTimePicker mode="date" minimumDate={new Date()} display='spinner' value={checkOutDate} onChange={checkoutChange}/>
+              <DateTimePicker mode="date" minimumDate={new Date()} display='calendar' value={checkOutDate} onChange={checkoutChange}/>
             )
           }
       </View>
@@ -83,7 +84,22 @@ const DateBooking = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    padding:10
   },
+  inputContainer:{
+    paddingVertical:10
+  },
+  checkIn:{
+    width:'100%',
+    padding:10,
+    paddingVertical:20,
+    backgroundColor:'gray',
+    borderRadius:10,
+    marginTop:10
+  },
+  checkText:{
+    color:'white'
+  }
 });
 
 export default DateBooking;
