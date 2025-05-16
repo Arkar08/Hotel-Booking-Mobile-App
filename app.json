@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "Hotel Booking App",
-    "slug": "Hotel Booking App",
+    "slug": "hote-booking-app",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/register-hotel.png",

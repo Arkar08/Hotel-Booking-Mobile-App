@@ -67,8 +67,8 @@ const styles = StyleSheet.create({
         marginTop:10,
     },
     cardList:{
-        paddingBottom:10,
-        height:630,
+        paddingBottom:15,
+        height:625,
         overflow:'scroll'
     }
 })

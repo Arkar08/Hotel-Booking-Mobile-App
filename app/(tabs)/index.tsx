@@ -142,7 +142,7 @@ const styles = StyleSheet.create({
     },
     card:{
         width:300,
-        height:250,
+        height:245,
         borderWidth:0.5,
         borderRadius:20,
         marginRight:20,
