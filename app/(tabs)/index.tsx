@@ -4,12 +4,12 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 import { useRouter } from "expo-router";
 import {
-    Image,
-    Pressable,
-    StyleSheet,
-    Text,
-    TextInput,
-    View,
+  Image,
+  Pressable,
+  StyleSheet,
+  Text,
+  TextInput,
+  View,
 } from "react-native";
 import { FlatList } from "react-native-gesture-handler";
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -48,9 +48,9 @@ const Home = () => {
           <View>
             <Text style={styles.price}>{item.price}/night</Text>
           </View>
-          <View style={styles.button}>
+          {/* <View style={styles.button}>
             <Text style={styles.buttonText}>{item.status}</Text>
-          </View>
+          </View> */}
         </View>
       </Pressable>
     );
@@ -163,7 +163,7 @@ const styles = StyleSheet.create({
   },
   card: {
     width: 300,
-    height: 245,
+    height: 240,
     borderWidth: 0.5,
     borderRadius: 20,
     marginRight: 20,
@@ -171,7 +171,7 @@ const styles = StyleSheet.create({
   },
   cardImage: {
     width: "100%",
-    height: "50%",
+    height: "60%",
     borderTopLeftRadius: 20,
     borderTopRightRadius: 20,
   },
@@ -202,6 +202,7 @@ const styles = StyleSheet.create({
     fontSize: 14,
     fontWeight: "bold",
     marginVertical: 10,
+    textAlign:'right'
   },
   header: {
     display: "flex",

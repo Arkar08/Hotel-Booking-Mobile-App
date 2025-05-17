@@ -46,7 +46,7 @@ const Profile = () => {
           </View>
           <AntDesign name="right" size={22} color="gray" />
         </Pressable>
-        <Pressable
+        {/* <Pressable
           style={styles.footerCard}
           onPress={() => router.push("/notification")}
         >
@@ -55,7 +55,7 @@ const Profile = () => {
             <Text style={styles.personalText}>Notification</Text>
           </View>
           <AntDesign name="right" size={22} color="gray" />
-        </Pressable>
+        </Pressable> */}
         {/* <Pressable
           style={styles.footerCard}
           onPress={() => router.push("/(navigate)/payment")}

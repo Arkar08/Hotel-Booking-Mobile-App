@@ -39,6 +39,10 @@ const PersonalDetails = () => {
           <Text style={styles.label}>Password</Text>
           <Input placeholder="Enter Password" />
         </View>
+        <View style={styles.inputContainer}>
+            <Text style={styles.label}>Phone Number</Text>
+            <Input placeholder="Enter phNo" maxLength={10} keyboardType="numeric"/>
+        </View>
       </View>
       <View style={styles.btnContainer}>
         <Pressable onPress={cancelBtn} style={styles.cancelBtn}>

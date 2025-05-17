@@ -16,7 +16,7 @@ const Card = ({item}:any) =>{
 
     return (
         <Pressable style={styles.cardContainer} onPress={()=>roomView('2')}>
-            <Text style={styles.status}>{item.status}</Text>
+            {/* <Text style={styles.status}>{item.status}</Text> */}
             <Image source={cardImage} style={styles.cardImage}/>
             <View style={styles.textContainer}>
                 <Text style={styles.roomName}>{item.roomNumber}</Text>

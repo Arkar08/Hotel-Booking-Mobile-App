@@ -53,7 +53,7 @@ const RoomDetails = () => {
       <View style={styles.bottomContainer}>
         <Text style={styles.priceText}>10000/night</Text>
         <Pressable style={styles.button} onPress={booking}>
-          <Text style={styles.buttonText}>Booking</Text>
+          <Text style={styles.buttonText}>Select Room</Text>
         </Pressable>
       </View>
     </View>
@@ -120,10 +120,10 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
   },
   button: {
-    padding: 10,
+    padding: 15,
     backgroundColor: "blue",
     borderRadius: 10,
-    width: 150,
+    width: 200,
   },
   buttonText: {
     fontSize: 16,
